@@ -23,6 +23,9 @@ pageEncoding="ISO-8859-1"%>
 	<h3>
 	<a href="employee">Employee</a>
 	</h3>
+	<h3>
+	<a href="welcome">Welcome Redirect Page</a>
+	</h3>
 	</center>
 </body>
 </html>

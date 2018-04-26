@@ -1,3 +1,5 @@
-/home/stpl/Documents/projects/SpringMVCHelloWeb/src/main/java/com/springmvc/controller/EmployeeController.java
-/home/stpl/Documents/projects/SpringMVCHelloWeb/src/main/java/com/springmvc/controller/HelloWorldController.java
-/home/stpl/Documents/projects/SpringMVCHelloWeb/src/main/java/com/springmvc/bean/Employee.java
+/home/stpl/Documents/projects/NewSpring/employeeManagement/SpringMVCHelloWeb/src/main/java/com/springmvc/bean/Employee.java
+/home/stpl/Documents/projects/NewSpring/employeeManagement/SpringMVCHelloWeb/src/main/java/com/springmvc/controller/WebRedirectController.java
+/home/stpl/Documents/projects/NewSpring/employeeManagement/SpringMVCHelloWeb/src/main/java/com/springmvc/controller/HelloWorldController.java
+/home/stpl/Documents/projects/NewSpring/employeeManagement/SpringMVCHelloWeb/src/main/java/com/springmvc/controller/EmployeeController.java
+/home/stpl/Documents/projects/NewSpring/employeeManagement/SpringMVCHelloWeb/src/main/java/com/springmvc/controller/WebStaticController.java

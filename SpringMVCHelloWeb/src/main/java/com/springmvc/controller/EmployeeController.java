@@ -38,6 +38,7 @@ public class EmployeeController {
 		return "employeeDetail";
 	}
 
+	@SuppressWarnings("rawtypes")
 	@RequestMapping("/dosomething")
 	public String requestHandlingMethod(Model model, HttpServletRequest request) {
 		System.out.println("Inside of dosomething handler method");

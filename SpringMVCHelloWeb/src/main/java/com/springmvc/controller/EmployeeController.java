@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServletRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -29,7 +30,7 @@ public class EmployeeController {
 		return new ModelAndView("employeeForm", "command", new Employee());
 	}
 
-	@RequestMapping(value = "/addEmployee", method = RequestMethod.POST)
+	@RequestMapping(value = "/addEmployee", params = "action1", method = RequestMethod.POST)
 	public String addEmployee(@ModelAttribute("SpringWeb") Employee employee, ModelMap model) {
 		model.addAttribute("name", employee.getName());
 		model.addAttribute("age", employee.getAge());
@@ -38,6 +39,43 @@ public class EmployeeController {
 		return "employeeDetail";
 	}
 
+	@RequestMapping(value = "/addEmployee", params = "action2", method = RequestMethod.POST)
+	public String addEmployeeException(@ModelAttribute("SpringWeb") Employee employee, ModelMap model)
+			throws EmployeeException {
+
+		if (employee.getName().length() < 5) {
+			throw new EmployeeException("Given name is too short");
+		} else {
+			model.addAttribute("name", employee.getName());
+		}
+		if (employee.getAge() < 10) {
+			throw new EmployeeException("Given age is too low");
+		} else {
+			model.addAttribute("age", employee.getAge());
+		}
+		model.addAttribute("empId", employee.getEmpId());
+		model.addAttribute("salary", employee.getSalary());
+		return "employeeDetail";
+	}
+	
+	
+	@ExceptionHandler(EmployeeException.class)
+	public ModelAndView handleCustomException(EmployeeException ex) {
+		ModelAndView model = new ModelAndView("ExceptionPage");
+		model.addObject("exception", ex);
+		return model;
+
+	}
+
+	@ExceptionHandler(Exception.class)
+	public ModelAndView handleAllException(Exception ex) {
+		ModelAndView model = new ModelAndView("error");
+		return model;
+
+	}
+
+	
+
 	@SuppressWarnings("rawtypes")
 	@RequestMapping("/dosomething")
 	public String requestHandlingMethod(Model model, HttpServletRequest request) {
@@ -45,7 +83,7 @@ public class EmployeeController {
 
 		System.out.println("--- Model data ---");
 		Map modelMap = model.asMap();
-		Object modelValue = null ;
+		Object modelValue = null;
 		for (Object modelKey : modelMap.keySet()) {
 			modelValue = modelMap.get(modelKey);
 			System.out.println(modelKey + " -- " + modelValue);

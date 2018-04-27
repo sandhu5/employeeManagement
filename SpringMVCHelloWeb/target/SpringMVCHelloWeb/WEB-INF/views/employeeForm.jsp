@@ -9,30 +9,33 @@
 </head>
 <body>
 	<h2>Employee Data Form</h2>
-	<form:form action="/SpringMVCHelloWeb/addEmployee" method="POST" >
-	<table>
-		<tbody>
-			<tr>
-				<td><form:label path="empId">Employee :</form:label></td>
-				<td><form:input path="empId"></form:input></td>
-			</tr>
-			<tr>
-				<td><form:label path="name">EmployeeName:</form:label></td>
-				<td><form:input path="name"></form:input></td>
-			</tr>
-			<tr>
-				<td><form:label path="age">Employee Age:</form:label></td>
-				<td><form:input path="age"></form:input></td>
-			</tr>
-			<tr>
-				<td><form:label path="salary">Employee Salary:</form:label></td>
-				<td><form:input path="salary"></form:input></td>
-			</tr>
-			<tr>
-				<td colspan="2"><input type="submit" value="Submit"/></td>
-			</tr>
-		</tbody>
-	</table>
+	<form:form action="/SpringMVCHelloWeb/addEmployee"
+		method="POST">
+		<table>
+			<tbody>
+				<tr>
+					<td><form:label path="empId">Employee :</form:label></td>
+					<td><form:input path="empId"></form:input></td>
+				</tr>
+				<tr>
+					<td><form:label path="name">EmployeeName:</form:label></td>
+					<td><form:input path="name"></form:input></td>
+				</tr>
+				<tr>
+					<td><form:label path="age">Employee Age:</form:label></td>
+					<td><form:input path="age"></form:input></td>
+				</tr>
+				<tr>
+					<td><form:label path="salary">Employee Salary:</form:label></td>
+					<td><form:input path="salary"></form:input></td>
+				</tr>
+				<tr>
+					<!-- <td colspan="2"><input type="submit" value="Submit" /></td> -->
+					<td colspan="2"><input type="submit" name="action1" value="AddEmployee" /> </td>
+					<td colspan="2"><input type="submit" name="action2" value="AddEmployeeException" /></td>
+				</tr>
+			</tbody>
+		</table>
 	</form:form>
 </body>
 </html>

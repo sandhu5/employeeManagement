@@ -3,3 +3,4 @@ com/springmvc/controller/EmployeeController.class
 com/springmvc/controller/WebRedirectController.class
 com/springmvc/controller/WebStaticController.class
 com/springmvc/controller/HelloWorldController.class
+com/springmvc/controller/EmployeeException.class
